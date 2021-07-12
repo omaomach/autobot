@@ -3,6 +3,7 @@ package com.example.autobot1.activities;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Matrix;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -27,13 +28,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.autobot1.R;
+import com.example.autobot1.activities.fragments.MechanicShopsFragment;
+import com.example.autobot1.activities.fragments.ScheduleFragment;
+import com.example.autobot1.activities.fragments.SpecificShopFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MapActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     protected ActionBarDrawerToggle actionBarDrawerToggle;
     protected DrawerLayout drawerLayout;
     protected Toolbar toolbar;
-    double latitude, longitude;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,21 +45,32 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         setContentView(R.layout.activity_map);
-        inflateFragContainer(MapFragment.newInstance(String.valueOf(latitude), String.valueOf(longitude)));
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.frame_layout,new MapFragment())
+                .commit();
         drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_drawer);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_opened, R.string.drawer_closed);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.logout) {
-            Toast.makeText(this, "Logout clicked", Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.recent) {
+            inflateFragContainer(new MechanicShopsFragment());
+        }else if (item.getItemId() == R.id.schedule) {
+            inflateFragContainer(new ScheduleFragment());
+        }else if (item.getItemId() == R.id.favorites) {
+            inflateFragContainer(new MechanicShopsFragment());
+        }else if (item.getItemId()==R.id.shop_parts){
+            inflateFragContainer(new SpecificShopFragment());
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
@@ -67,41 +82,5 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
                 .replace(R.id.frame_layout,
                         fragment)
                 .commit();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.map_view_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
-        searchView.setQueryHint("Search by name or character");
-        searchView.setPadding(10, 0, 0, 10);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                /***
-                 * @author jamie@fortnox we will handle the search queries here
-                 */
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.logout) {
-            /***
-             * @author jamie@fortnox Logout will be handled here
-             */
-            return true;
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
     }
 }

@@ -104,38 +104,38 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/rellayc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="40dp">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/rellayc"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginBottom="40dp">-->
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/et_bg"
-            android:text="Mechanic"
-            android:textAllCaps="false"
-            android:textColor="#000000">
+<!--        <Button-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:background="@drawable/et_bg"-->
+<!--            android:text="Mechanic"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#000000">-->
 
-        </Button>
+<!--        </Button>-->
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/et_bg"
-            android:text="Vehicle owner"
-            android:textAllCaps="false"
-            android:textColor="#000000">
+<!--        <Button-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:background="@drawable/et_bg"-->
+<!--            android:text="Vehicle owner"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#000000">-->
 
-        </Button>
+<!--        </Button>-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
 </RelativeLayout>

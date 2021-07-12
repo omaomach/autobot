@@ -8,7 +8,27 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="always" />
     <item
+        android:id="@+id/account_type"
+        android:icon="@drawable/account_box_type"
+        android:title="Account type" />
+    <item
+        android:id="@+id/notification"
+        android:icon="@drawable/notifications"
+        android:title="Notification" />
+    <item
+        android:id="@+id/vehicle"
+        android:icon="@drawable/directions_car"
+        android:title="Vehicle" />
+    <item
+        android:id="@+id/shops"
+        android:icon="@drawable/add_business"
+        android:title="My shops" />
+    <item
         android:id="@+id/logout"
         android:icon="@drawable/logout"
         android:title="Logout" />
+    <item
+        android:id="@+id/purchases"
+        android:icon="@drawable/shopping_cart"
+        android:title="Purchases" />
 </menu>

@@ -4,14 +4,21 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.autobot1.R;
@@ -61,6 +68,7 @@ public class MapFragment extends Fragment {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -81,7 +89,7 @@ public class MapFragment extends Fragment {
                                 options.position(pos);
                                 options.title("My position");
                                 options.snippet("Iam here");
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 10));
+                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
                                 googleMap.addMarker(options);
                             }
                         });
@@ -90,8 +98,47 @@ public class MapFragment extends Fragment {
             });
         } else {
             ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 800);
+//            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, 800);
         }
+        setHasOptionsMenu(true);
         return view;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.logout) {
+            //todo: Logout will be handled here
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /***
+     * @author jamie@fortnox we will handle the search queries here
+     */
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.map_view_menu,menu);
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(item);
+        searchView.setQueryHint("Search by name or character...");
+        searchView.setPadding(10,0,10,0);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            /***
+             * @author jamie@fortnox Logout will be handled here
+             */
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
     }
 
     @Override
@@ -99,24 +146,18 @@ public class MapFragment extends Fragment {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 800 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             @SuppressLint("MissingPermission") Task<Location> task = client.getLastLocation();
-            task.addOnSuccessListener(new OnSuccessListener<Location>() {
-                @Override
-                public void onSuccess(Location location) {
-                    if (location != null) {
-                        fragment.getMapAsync(new OnMapReadyCallback() {
-                            @Override
-                            public void onMapReady(@NonNull GoogleMap googleMap) {
-                                LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
-                                Log.i(TAG, "onMapReady: lat:" + location.getLatitude() + " long:" + location.getLongitude());
-                                MarkerOptions options = new MarkerOptions();
-                                options.position(pos);
-                                options.title("My position");
-                                options.snippet("Iam here");
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
-                                googleMap.addMarker(options);
-                            }
-                        });
-                    }
+            task.addOnSuccessListener(location -> {
+                if (location != null) {
+                    fragment.getMapAsync(googleMap -> {
+                        LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
+                        Log.i(TAG, "onMapReady: lat:" + location.getLatitude() + " long:" + location.getLongitude());
+                        MarkerOptions options = new MarkerOptions();
+                        options.position(pos);
+                        options.title("My position");
+                        options.snippet("Iam here");
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 10));
+                        googleMap.addMarker(options);
+                    });
                 }
             });
         }
