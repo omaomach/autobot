@@ -4,18 +4,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ShopItem implements Parcelable {
-    private String title,location,distribution;
+    private String title,location, description,imageUrl;
 
-    public ShopItem(String title, String location, String distribution) {
+    public ShopItem(String title, String location, String description,String imageUrl) {
         this.title = title;
         this.location = location;
-        this.distribution = distribution;
+        this.description = description;
+        this.imageUrl = imageUrl;
     }
 
     protected ShopItem(Parcel in) {
         title = in.readString();
         location = in.readString();
-        distribution = in.readString();
+        description = in.readString();
+        imageUrl = in.readString();
     }
 
     public static final Creator<ShopItem> CREATOR = new Creator<ShopItem>() {
@@ -46,12 +48,20 @@ public class ShopItem implements Parcelable {
         this.location = location;
     }
 
-    public String getDistribution() {
-        return distribution;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDistribution(String distribution) {
-        this.distribution = distribution;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     @Override
@@ -63,6 +73,7 @@ public class ShopItem implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
         dest.writeString(location);
-        dest.writeString(distribution);
+        dest.writeString(description);
+        dest.writeString(imageUrl);
     }
 }

@@ -40,7 +40,6 @@ public class MapFragment extends Fragment {
     public static final String TAG = "Map fragment";
     FusedLocationProviderClient client;
     SupportMapFragment fragment;
-
     private String latitude;
     private String longitude;
 
@@ -76,34 +75,29 @@ public class MapFragment extends Fragment {
         fragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.google_map);
         if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             Task<Location> task = client.getLastLocation();
-            task.addOnSuccessListener(new OnSuccessListener<Location>() {
-                @Override
-                public void onSuccess(Location location) {
-                    if (location != null) {
-                        fragment.getMapAsync(new OnMapReadyCallback() {
-                            @Override
-                            public void onMapReady(@NonNull GoogleMap googleMap) {
-                                LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
-                                Log.i(TAG, "onMapReady: lat:" + location.getLatitude() + " long:" + location.getLongitude());
-                                MarkerOptions options = new MarkerOptions();
-                                options.position(pos);
-                                options.title("My position");
-                                options.snippet("Iam here");
-                                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
-                                googleMap.addMarker(options);
-                            }
-                        });
-                    }
+            task.addOnSuccessListener(location -> {
+                if (location != null) {
+                    fragment.getMapAsync(new OnMapReadyCallback() {
+                        @Override
+                        public void onMapReady(@NonNull GoogleMap googleMap) {
+                            LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
+                            Log.i(TAG, "onMapReady: lat:" + location.getLatitude() + " long:" + location.getLongitude());
+                            MarkerOptions options = new MarkerOptions();
+                            options.position(pos);
+                            options.title("My position");
+                            options.snippet("Iam here");
+                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
+                            googleMap.addMarker(options);
+                        }
+                    });
                 }
             });
         } else {
             ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 800);
-//            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_BACKGROUND_LOCATION}, 800);
         }
         setHasOptionsMenu(true);
         return view;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
