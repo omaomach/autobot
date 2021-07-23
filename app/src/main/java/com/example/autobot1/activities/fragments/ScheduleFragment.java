@@ -73,4 +73,6 @@ public class ScheduleFragment extends Fragment {
         binding.lvShedules.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL,false));
         return binding.getRoot();
     }
+
+    //todo: add functionality to return to maps Fragment
 }
