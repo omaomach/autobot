@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.autobot1.R;
 import com.example.autobot1.adapters.ShopAdapter;
+import com.example.autobot1.databinding.FragmentMechanicShopsBinding;
 import com.example.autobot1.models.ShopItem;
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ public class MechanicShopsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private RecyclerView shopsRecycler;
+    private FragmentMechanicShopsBinding binding;
 
     public MechanicShopsFragment() {
         // Required empty public constructor
@@ -52,7 +54,9 @@ public class MechanicShopsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = getLayoutInflater().inflate(R.layout.shop_item,container,false);
+        binding = FragmentMechanicShopsBinding.inflate(inflater,container,false);
+//        View parent =inflater.inflate(R.layout.fragment_mechanic_shops,container,false);
+//        View view = getLayoutInflater().inflate(R.layout.shop_item,container,false);
         ArrayList<ShopItem> shops = new ArrayList<>();
         shops.add(new ShopItem("Title","Haile Selassie ave","Description about the is found here and all the info about the shop is all there",String.valueOf(R.drawable.bot)));
         shops.add(new ShopItem("Title","Haile Selassie ave","Description about the is found here and all the info about the shop is all there",String.valueOf(R.drawable.bot)));
@@ -78,12 +82,12 @@ public class MechanicShopsFragment extends Fragment {
         shops.add(new ShopItem("Title","Haile Selassie ave","Description about the is found here and all the info about the shop is all there",String.valueOf(R.drawable.bot)));
         shops.add(new ShopItem("Title","Haile Selassie ave","Description about the is found here and all the info about the shop is all there",String.valueOf(R.drawable.bot)));
         shops.add(new ShopItem("Title","Haile Selassie ave","Description about the is found here and all the info about the shop is all there",String.valueOf(R.drawable.bot)));
-        shopsRecycler = view.findViewById(R.id.shop_recycler);
+        shopsRecycler = binding.shopsRecycler;
         ShopAdapter shopAdapter = new ShopAdapter(shops);
         shopsRecycler.setLayoutManager(new StaggeredGridLayoutManager(2,RecyclerView.VERTICAL));
         shopsRecycler.setClipToPadding(false);
         shopsRecycler.hasFixedSize();
         shopsRecycler.setAdapter(shopAdapter);
-        return view;
+        return binding.getRoot();
     }
 }

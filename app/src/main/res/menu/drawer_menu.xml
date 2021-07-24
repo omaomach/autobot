@@ -18,4 +18,8 @@
         android:id="@+id/shop_parts"
         android:icon="@drawable/shopping_cart"
         android:title="Shop for parts" />
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/map"
+        android:title="Shop for parts" />
 </menu>

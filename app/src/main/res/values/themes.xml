@@ -9,6 +9,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
     <style name="Theme.AutoBot2" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="windowActionBar">false</item>
@@ -18,4 +19,13 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
+    <style name="Theme.AutoBot1.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AutoBot1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.AutoBot1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
