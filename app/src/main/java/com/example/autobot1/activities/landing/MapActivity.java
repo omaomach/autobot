@@ -1,4 +1,4 @@
-package com.example.autobot1.activities;
+package com.example.autobot1.activities.landing;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -14,9 +14,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.autobot1.R;
-import com.example.autobot1.activities.fragments.MechanicShopsFragment;
-import com.example.autobot1.activities.fragments.ScheduleFragment;
-import com.example.autobot1.activities.fragments.SpecificShopFragment;
+import com.example.autobot1.activities.landing.frags.MapFragment;
+import com.example.autobot1.activities.landing.frags.MechanicShopsFragment;
+import com.example.autobot1.activities.landing.frags.ScheduleFragment;
+import com.example.autobot1.activities.landing.frags.SpecificShopFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MapActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

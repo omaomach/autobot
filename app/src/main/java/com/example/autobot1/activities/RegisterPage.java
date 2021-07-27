@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.autobot1.R;
+import com.example.autobot1.activities.landing.MapActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
@@ -16,7 +17,6 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -63,6 +63,6 @@ public class RegisterPage extends AppCompatActivity {
         }
     }
     private void createNewUserInDb(){
-        startActivity(new Intent(this,MapActivity.class));
+        startActivity(new Intent(this, MapActivity.class));
     }
 }

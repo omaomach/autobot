@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.autobot1.R;
+import com.example.autobot1.databinding.ShopItemBinding;
 import com.example.autobot1.models.ShopItem;
 import com.squareup.picasso.Picasso;
 
@@ -17,16 +18,25 @@ import java.util.List;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
     private final List<ShopItem> shopItems;
+    private OnItemClick listener;
 
     public ShopAdapter(List<ShopItem> shopItems) {
         this.shopItems = shopItems;
+    }
+
+    public interface OnItemClick{
+        void onItemClick(int position);
+    }
+    public void setOnItemClickListener(OnItemClick listener){
+        this.listener = listener;
     }
 
     @NonNull
     @Override
     public ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ShopViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_item, parent, false)
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.shop_item, parent, false),
+                listener
         );
     }
 
@@ -41,22 +51,22 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     }
 
     static class ShopViewHolder extends RecyclerView.ViewHolder {
-        private final TextView title;
-        private final TextView location;
-        private final TextView description;
-        private final ImageView shopImage;
-        public ShopViewHolder(View itemView) {
+        private final ShopItemBinding binding;
+        public ShopViewHolder(View itemView,OnItemClick listener) {
             super(itemView);
-            title = itemView.findViewById(R.id.shop_title_text_view);
-            location = itemView.findViewById(R.id.shop_location_text_view);
-            description = itemView.findViewById(R.id.shop_description_text_view);
-            shopImage = itemView.findViewById(R.id.shop_item_image_view);
+             binding = ShopItemBinding.bind(itemView);
+             itemView.setOnClickListener(view -> {
+                 int position = getAdapterPosition();
+                 if (position!=RecyclerView.NO_POSITION){
+                     listener.onItemClick(position);
+                 }
+             });
         }
         public void bind(ShopItem shopItem){
-            title.setText(shopItem.getTitle());
-            location.setText(shopItem.getLocation());
-            description.setText(shopItem.getDescription());
-            Picasso.get().load(shopItem.getImageUrl()).placeholder(R.drawable.bot).into(shopImage);
+            binding.shopTitleTextView.setText(shopItem.getTitle());
+            binding.shopLocationTextView.setText(shopItem.getLocation());
+            binding.shopDescriptionTextView.setText(shopItem.getDescription());
+            Picasso.get().load(shopItem.getImageUrl()).placeholder(R.drawable.bot).into(binding.shopItemImageView);
         }
     }
 }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.fragments.MechanicShopsFragment">
+    tools:context=".activities.landing.frags.MechanicShopsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
@@ -19,5 +19,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/shop_item" />
+
+    <ImageView
+        android:id="@+id/empty_tray_iv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/empty_tray"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/shops_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shops_recycler" />
+
+    <TextView
+        android:id="@+id/empty_tray_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No shops found"
+        android:textColor="#8F8C8C"
+        android:visibility="invisible"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/empty_tray_iv"
+        app:layout_constraintStart_toStartOf="@+id/empty_tray_iv"
+        app:layout_constraintTop_toBottomOf="@+id/empty_tray_iv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

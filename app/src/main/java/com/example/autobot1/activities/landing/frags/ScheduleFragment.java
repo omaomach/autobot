@@ -1,4 +1,4 @@
-package com.example.autobot1.activities.fragments;
+package com.example.autobot1.activities.landing.frags;
 
 import android.os.Bundle;
 

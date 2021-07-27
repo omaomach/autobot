@@ -13,8 +13,8 @@
     <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
     <string name="title_activity_credentials">Credentials Page</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="sign_up_fragment">Sign up</string>
+    <string name="login_fragment">Login</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
