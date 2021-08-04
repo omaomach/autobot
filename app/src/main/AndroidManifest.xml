@@ -8,8 +8,6 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />-->
-
 
     <application
         android:allowBackup="true"
@@ -18,7 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoBot1">
-        <activity android:name=".activities.MapActivity"></activity>
+        <activity
+            android:name=".activities.credentials.CredentialsActivity"
+            android:label="@string/title_activity_credentials"
+            android:theme="@style/Theme.AutoBot1.NoActionBar"></activity>
+        <activity android:name=".activities.landing.MapActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -30,6 +32,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+        <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="false"/>
 
         <activity android:name=".activities.Notifications" />
         <activity android:name=".activities.MechanicMenu" />

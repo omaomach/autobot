@@ -1,4 +1,4 @@
-package com.example.autobot1.activities.fragments;
+package com.example.autobot1.activities.landing.frags;
 
 import android.os.Bundle;
 
@@ -73,4 +73,6 @@ public class ScheduleFragment extends Fragment {
         binding.lvShedules.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL,false));
         return binding.getRoot();
     }
+
+    //todo: add functionality to return to maps Fragment
 }

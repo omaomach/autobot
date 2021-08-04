@@ -1,4 +1,4 @@
-package com.example.autobot1.activities;
+package com.example.autobot1.activities.landing.frags;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -30,7 +30,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 public class MapFragment extends Fragment {
