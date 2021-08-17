@@ -1,6 +1,5 @@
 package com.example.autobot1.activities.landing.frags;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
