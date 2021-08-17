@@ -76,18 +76,15 @@ public class MapFragment extends Fragment {
             Task<Location> task = client.getLastLocation();
             task.addOnSuccessListener(location -> {
                 if (location != null) {
-                    fragment.getMapAsync(new OnMapReadyCallback() {
-                        @Override
-                        public void onMapReady(@NonNull GoogleMap googleMap) {
-                            LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
-                            Log.i(TAG, "onMapReady: lat:" + location.getLatitude() + " long:" + location.getLongitude());
-                            MarkerOptions options = new MarkerOptions();
-                            options.position(pos);
-                            options.title("My position");
-                            options.snippet("Iam here");
-                            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
-                            googleMap.addMarker(options);
-                        }
+                    fragment.getMapAsync(googleMap -> {
+                        LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
+                        Log.i(TAG, "onMapReady: lat:" + location.getLatitude() + " long:" + location.getLongitude());
+                        MarkerOptions options = new MarkerOptions();
+                        options.position(pos);
+                        options.title("My position");
+                        options.snippet("Iam here");
+                        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 15));
+                        googleMap.addMarker(options);
                     });
                 }
             });
