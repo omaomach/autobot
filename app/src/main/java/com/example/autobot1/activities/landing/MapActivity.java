@@ -15,30 +15,31 @@ import androidx.fragment.app.Fragment;
 
 import com.example.autobot1.R;
 import com.example.autobot1.activities.landing.frags.MapFragment;
-import com.example.autobot1.activities.landing.frags.MechanicShopsFragment;
-import com.example.autobot1.activities.landing.frags.ScheduleFragment;
+import com.example.autobot1.activities.mechanics.frags.MechanicShopsFragment;
+import com.example.autobot1.activities.mechanics.frags.ScheduleFragment;
 import com.example.autobot1.activities.landing.frags.SpecificShopFragment;
+import com.example.autobot1.databinding.ActivityMapBinding;
 import com.google.android.material.navigation.NavigationView;
 
 public class MapActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     protected ActionBarDrawerToggle actionBarDrawerToggle;
     protected DrawerLayout drawerLayout;
     protected Toolbar toolbar;
-    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        com.example.autobot1.databinding.ActivityMapBinding binding = ActivityMapBinding.inflate(getLayoutInflater());
         Window window = getWindow();
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-        setContentView(R.layout.activity_map);
+        setContentView(binding.getRoot());
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.frame_layout,new MapFragment())
                 .commit();
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_drawer);
-        toolbar = findViewById(R.id.toolbar);
+        drawerLayout = binding.drawerLayout;
+        NavigationView navigationView = binding.navDrawer;
+        toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_opened, R.string.drawer_closed);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);

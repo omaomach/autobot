@@ -1,4 +1,4 @@
-package com.example.autobot1.activities.landing.frags;
+package com.example.autobot1.activities.mechanics.frags;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.autobot1.R;
-import com.example.autobot1.activities.MainActivity;
+import com.example.autobot1.activities.landing.frags.SpecificShopFragment;
 import com.example.autobot1.activities.landing.viewmodels.MechanicShopsViewModel;
 import com.example.autobot1.adapters.ShopAdapter;
 import com.example.autobot1.databinding.FragmentMechanicShopsBinding;

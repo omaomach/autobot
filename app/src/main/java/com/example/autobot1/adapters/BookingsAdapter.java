@@ -20,13 +20,13 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ScheduleAdapter extends ArrayAdapter<Bookings> {
+public class BookingsAdapter extends ArrayAdapter<Bookings> {
     private final Context context;
     private final int resource;
     private final List<Bookings> bookings;
     private int lastPosition = -1;
 
-    public ScheduleAdapter(@NonNull Context context, int resource, @NonNull List<Bookings> bookings) {
+    public BookingsAdapter(@NonNull Context context, int resource, @NonNull List<Bookings> bookings) {
         super(context, resource, bookings);
         this.context = context;
         this.resource = resource;

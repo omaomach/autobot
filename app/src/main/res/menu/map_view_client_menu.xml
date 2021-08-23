@@ -10,7 +10,7 @@
     <item
         android:id="@+id/account_type"
         android:icon="@drawable/account_box_type"
-        android:title="Account type" />
+        android:title="Account" />
     <item
         android:id="@+id/notification"
         android:icon="@drawable/notifications"

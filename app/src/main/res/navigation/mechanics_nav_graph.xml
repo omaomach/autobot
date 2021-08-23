@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mechanics_nav_graph"
+    app:startDestination="@id/shops">
+    <fragment
+        android:id="@+id/shops"
+        android:name="com.example.autobot1.activities.mechanics.frags.MechanicShopsFragment"
+        android:label="Shops"
+        tools:layout="@layout/fragment_mechanic_shops" >
+        <action android:id="@+id/go_to_next_frag"/>
+    </fragment>
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.example.autobot1.activities.mechanics.frags.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications">
+        <action android:id="@+id/go_to_next_frag"/>
+    </fragment>
+    <fragment
+        android:id="@+id/schedule"
+        android:label="Schedule"
+        android:name="com.example.autobot1.activities.mechanics.frags.BookingFragment"
+        tools:layout="@layout/fragment_booking">
+        <action android:id="@+id/go_to_next_frag"/>
+    </fragment>
+</navigation>

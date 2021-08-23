@@ -20,5 +20,44 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="sign_up">Sign up</string>
+    <string name="use_other_methods_to_register">Use other methods to register</string>
+    <string name="add">Add</string>
+    <string name="pic">pic</string>
+    <string name="name">Name</string>
+    <string name="meet_up_time">Meet up time: 11:20</string>
+    <string name="pick_up_time">Pick up time: 12:00</string>
+    <string name="mechanic_schedule">Mechanic Schedule</string>
+    <string name="input_pickup_meetup_time">Input Pickup/Meetup Time</string>
+    <string name="enter_subject">Enter subject</string>
+    <string name="describe_your_problem">Describe your problem</string>
+    <string name="send_email">Send Email</string>
+    <string name="call">Call</string>
+    <string name="get_pin">Get Pin</string>
+    <string name="describe_problem">Describe problem</string>
+    <string name="directions">+ Directions</string>
+    <string name="input_recipient_email">Input Recipient Email</string>
+    <string name="contact_mechanic">Contact Mechanic</string>
+    <string name="auto_bot">auto bot</string>
+    <string name="autobot">AutoBot</string>
+    <string name="link_to_a_mechanic_auto_repair_shop_nearest_you">Link to a Mechanic / Auto Repair Shop Nearest You</string>
+    <string name="register_to_continue">Register to continue</string>
+    <string name="yours_schedules">Yours Schedules</string>
+    <string name="empty_tray">empty_tray</string>
+    <string name="no_shops_found">No shops found</string>
+    <string name="enter_shop_location">Enter shop location</string>
+    <string name="submit">Submit</string>
+]    <string name="enter_shop_name">Enter shop name</string>
+    <string name="username">Enter Username</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="password">Enter Password</string>
+    <string name="client">Client</string>
+    <string name="mechanic">Mechanic</string>
+    <string name="administrator_name">Administrator name</string>
+    <string name="administrator_company_com">administrator@company.com</string>
+    <string name="title">Title</string>
+    <string name="description">This is where the description about the product goes and all other information abotu the product</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
 
 </resources>
