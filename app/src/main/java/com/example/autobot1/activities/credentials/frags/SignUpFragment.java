@@ -18,7 +18,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.autobot1.R;
 import com.example.autobot1.activities.landing.MapActivity;
 import com.example.autobot1.databinding.FragmentSignUpBinding;
-import com.example.autobot1.models.User;
+
+import com.example.autobot1.models.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -101,7 +102,7 @@ public class SignUpFragment extends Fragment {
     }
 
     private void addUserToDb(String name, String email, String accountType) {
-        User user = new User(name, email, accountType);
+        Users user = new Users(name, email, accountType);
         FirebaseFirestore.getInstance().collection("users/" + accountType)
                 .add(user)
                 .addOnCompleteListener(task -> {

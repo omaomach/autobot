@@ -16,10 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoBot1">
-        <activity
-            android:name=".activities.credentials.CredentialsActivity"
-            android:label="@string/title_activity_credentials"
-            android:theme="@style/Theme.AutoBot1.NoActionBar"></activity>
+
         <activity android:name=".activities.landing.MapActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -35,16 +32,16 @@
         <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
             android:value="false"/>
 
-        <activity android:name=".activities.Notifications" />
-        <activity android:name=".activities.MechanicMenu" />
-        <activity android:name=".activities.Users" />
-        <activity android:name=".activities.Booking" />
-        <activity android:name=".activities.Contact" />
-        <activity android:name=".activities.Schedules" />
-        <activity android:name=".activities.Menu" />
-        <activity android:name=".activities.RegisterPage" />
-        <activity android:name=".activities.Login" />
-        <activity android:name=".activities.Dashboard" />
+        <activity android:name=".activities.Notification" />
+        <activity android:name=".activities.Mechanic_Menu" />
+        <activity android:name=".activities.User" />
+        <activity android:name=".activities.Bookings" />
+        <activity android:name=".activities.Contacts" />
+        <activity android:name=".activities.Schedule" />
+        <activity android:name=".activities.Menus" />
+        <activity android:name=".activities.Register" />
+        <activity android:name=".activities.LoginPage" />
+        <activity android:name=".activities.Dashboards" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

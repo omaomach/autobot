@@ -19,6 +19,7 @@ public class ProductItem implements Parcelable {
         price = in.readString();
     }
 
+
     public static final Creator<ProductItem> CREATOR = new Creator<ProductItem>() {
         @Override
         public ProductItem createFromParcel(Parcel in) {

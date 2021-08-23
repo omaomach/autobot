@@ -7,7 +7,7 @@
     android:background="#ffff"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".activities.Dashboard">
+    tools:context=".activities.Dashboards">
 
     <ImageView
         android:id="@+id/logoImage"

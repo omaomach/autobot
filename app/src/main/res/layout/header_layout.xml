@@ -1,54 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#787171"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="#808080"
+    >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/bot"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:civ_border_width="1dp"
-        app:civ_border_color="#000"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="152dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/account_circle" />
-
-    <TextView
-        android:id="@+id/name"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Administrator name"
-        android:layout_marginStart="20dp"
-        android:textSize="18sp"
-        android:fontFamily="@font/antic"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp">
 
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="administrator@company.com"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/antic"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/logoImage2"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/account_circle_24">
+
+        </ImageView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logoImage2"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/antic"
+                android:text="Username"
+                android:textColor="#000000"
+                android:textSize="30sp">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/linea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/register"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/lineb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="@font/antic"
+                        android:hint="Recent"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="15sp">
+
+                    </Button>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="@font/antic"
+                        android:hint="Schedules"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="15sp">
+
+                    </Button>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="@font/antic"
+                        android:hint="Favourites"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="15sp">
+
+                    </Button>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/et_bg"
+                        android:fontFamily="@font/antic"
+                        android:hint="Shop for parts"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
+                        android:textSize="15sp">
+
+                    </Button>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        
+
+    </RelativeLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/rellayc"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_marginBottom="40dp">-->
+
+<!--        <Button-->
+
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="5dp"-->
+<!--            android:background="@drawable/et_bg"-->
+<!--            android:text="User Options"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#000000">-->
+
+<!--        </Button>-->
+
+
+<!--    </RelativeLayout>-->
+
+</RelativeLayout>

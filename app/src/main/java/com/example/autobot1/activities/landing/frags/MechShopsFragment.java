@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.autobot1.R;
-import com.example.autobot1.activities.MainActivity;
-import com.example.autobot1.activities.landing.viewmodels.MechanicShopsViewModel;
+
+import com.example.autobot1.activities.landing.viewmodels.MechShopsViewModel;
 import com.example.autobot1.adapters.ShopAdapter;
 import com.example.autobot1.databinding.FragmentMechanicShopsBinding;
 import com.example.autobot1.models.ShopItem;
@@ -24,7 +24,7 @@ import com.example.autobot1.models.ShopItem;
 import java.util.List;
 
 
-public class MechanicShopsFragment extends Fragment {
+public class MechShopsFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -33,14 +33,14 @@ public class MechanicShopsFragment extends Fragment {
     private String mParam2;
     private RecyclerView shopsRecycler;
     private FragmentMechanicShopsBinding binding;
-    private MechanicShopsViewModel viewModel;
+    private MechShopsViewModel viewModel;
 
-    public MechanicShopsFragment() {
+    public MechShopsFragment() {
         // Required empty public constructor
     }
 
-    public static MechanicShopsFragment newInstance(String param1, String param2) {
-        MechanicShopsFragment fragment = new MechanicShopsFragment();
+    public static MechShopsFragment newInstance(String param1, String param2) {
+        MechShopsFragment fragment = new MechShopsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -51,7 +51,7 @@ public class MechanicShopsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel = new ViewModelProvider(requireActivity()).get(MechanicShopsViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(MechShopsViewModel.class);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -80,7 +80,7 @@ public class MechanicShopsFragment extends Fragment {
                         requireActivity().getSupportFragmentManager()
                                 .beginTransaction()
                                 .replace(R.id.nav_host_fragment_container,
-                                        SpecificShopFragment.newInstance(shopItems.get(position).getTitle()));
+                                        SpecifShopFragment.newInstance(shopItems.get(position).getTitle()));
                     }
                 });
             }

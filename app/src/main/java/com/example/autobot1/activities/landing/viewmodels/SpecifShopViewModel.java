@@ -12,11 +12,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpecificShopViewModel extends AndroidViewModel {
+public class SpecifShopViewModel extends AndroidViewModel {
     private List<ProductItem> productItems;
     private MutableLiveData<List<ProductItem>> mutableProducts;
 
-    public SpecificShopViewModel(Application application) {
+    public SpecifShopViewModel(Application application) {
         super(application);
         productItems = new ArrayList<>();
         mutableProducts = new MutableLiveData<>();

@@ -20,6 +20,7 @@ public class ShopItem implements Parcelable {
         imageUrl = in.readString();
     }
 
+
     public static final Creator<ShopItem> CREATOR = new Creator<ShopItem>() {
         @Override
         public ShopItem createFromParcel(Parcel in) {

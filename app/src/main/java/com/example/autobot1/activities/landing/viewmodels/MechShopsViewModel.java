@@ -16,11 +16,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MechanicShopsViewModel extends AndroidViewModel {
+public class MechShopsViewModel extends AndroidViewModel {
     ArrayList<ShopItem> shops;
     MutableLiveData<List<ShopItem>> mShops;
 
-    public MechanicShopsViewModel(Application application) {
+    public MechShopsViewModel(Application application) {
         super(application);
         shops = new ArrayList<>();
         mShops = new MutableLiveData<>();

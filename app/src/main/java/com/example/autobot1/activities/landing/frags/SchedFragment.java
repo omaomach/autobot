@@ -18,7 +18,7 @@ import com.example.autobot1.models.ScheduleItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScheduleFragment extends Fragment {
+public class SchedFragment extends Fragment {
     private FragmentScheduleBinding binding;
 
     private static final String ARG_PARAM1 = "param1";
@@ -27,12 +27,12 @@ public class ScheduleFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ScheduleFragment() {
+    public SchedFragment() {
         // Required empty public constructor
     }
 
-    public static ScheduleFragment newInstance(String param1, String param2) {
-        ScheduleFragment fragment = new ScheduleFragment();
+    public static SchedFragment newInstance(String param1, String param2) {
+        SchedFragment fragment = new SchedFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

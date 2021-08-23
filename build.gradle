@@ -2,11 +2,15 @@
 buildscript {
     ext.kotlin_version = '1.5.30-M1'
     repositories {
+
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
         google()
-        jcenter()
+
+        //jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:4.1.2'
 
         classpath "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin:1.2.0"
 //        classpath 'com.google.gms:google-services:4.3.3'
@@ -20,8 +24,12 @@ buildscript {
 
 allprojects {
     repositories {
+
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
         google()
-        jcenter()
+
+        //jcenter()
     }
 }
 

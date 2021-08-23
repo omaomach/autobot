@@ -14,10 +14,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.autobot1.R;
-import com.example.autobot1.activities.landing.frags.MapFragment;
-import com.example.autobot1.activities.landing.frags.MechanicShopsFragment;
-import com.example.autobot1.activities.landing.frags.ScheduleFragment;
-import com.example.autobot1.activities.landing.frags.SpecificShopFragment;
+import com.example.autobot1.activities.landing.frags.MapMyFragment;
+import com.example.autobot1.activities.landing.frags.MechShopsFragment;
+import com.example.autobot1.activities.landing.frags.SchedFragment;
+import com.example.autobot1.activities.landing.frags.SpecifShopFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class MapActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,7 +34,7 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_map);
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.frame_layout,new MapFragment())
+                .add(R.id.frame_layout,new MapMyFragment())
                 .commit();
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_drawer);
@@ -49,15 +49,15 @@ public class MapActivity extends AppCompatActivity implements NavigationView.OnN
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.recent) {
-            inflateFragContainer(new MechanicShopsFragment());
+            inflateFragContainer(new MechShopsFragment());
         }else if (item.getItemId() == R.id.schedule) {
-            inflateFragContainer(new ScheduleFragment());
+            inflateFragContainer(new SchedFragment());
         }else if (item.getItemId() == R.id.favorites) {
-            inflateFragContainer(new MechanicShopsFragment());
+            inflateFragContainer(new MechShopsFragment());
         }else if (item.getItemId()==R.id.shop_parts){
-            inflateFragContainer(new SpecificShopFragment());
+            inflateFragContainer(new SpecifShopFragment());
         }else if (item.getItemId()==R.id.map){
-            inflateFragContainer(new MapFragment());
+            inflateFragContainer(new MapMyFragment());
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;

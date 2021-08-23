@@ -18,6 +18,7 @@ public class ScheduleItem implements Parcelable {
         imageUrl = in.readString();
     }
 
+
     public static final Creator<ScheduleItem> CREATOR = new Creator<ScheduleItem>() {
         @Override
         public ScheduleItem createFromParcel(Parcel in) {

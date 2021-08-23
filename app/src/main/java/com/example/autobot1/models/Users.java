@@ -1,9 +1,9 @@
 package com.example.autobot1.models;
 
-public class User {
+public class Users {
     private String name,email,accountTYpe;
 
-    public User(String name, String email, String accountTYpe) {
+    public Users(String name, String email, String accountTYpe) {
         this.name = name;
         this.email = email;
         this.accountTYpe = accountTYpe;

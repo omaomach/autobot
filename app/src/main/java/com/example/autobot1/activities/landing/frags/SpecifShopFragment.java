@@ -12,28 +12,28 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.autobot1.activities.landing.viewmodels.SpecificShopViewModel;
+import com.example.autobot1.activities.landing.viewmodels.SpecifShopViewModel;
 import com.example.autobot1.adapters.ProductAdapter;
 import com.example.autobot1.databinding.FragmentSpecificShopBinding;
 import com.example.autobot1.models.ProductItem;
 
 import java.util.List;
 
-public class SpecificShopFragment extends Fragment {
+public class SpecifShopFragment extends Fragment {
     private FragmentSpecificShopBinding binding;
-    private SpecificShopViewModel viewModel;
+    private SpecifShopViewModel viewModel;
 
     private static final String NAME = "name";
 
     private String name;
 
-    public SpecificShopFragment() {
+    public SpecifShopFragment() {
         // Required empty public constructor
     }
 
 
-    public static SpecificShopFragment newInstance(String name) {
-        SpecificShopFragment fragment = new SpecificShopFragment();
+    public static SpecifShopFragment newInstance(String name) {
+        SpecifShopFragment fragment = new SpecifShopFragment();
         Bundle args = new Bundle();
         args.putString(NAME, name);
         fragment.setArguments(args);
@@ -43,7 +43,7 @@ public class SpecificShopFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel = new ViewModelProvider(requireActivity()).get(SpecificShopViewModel.class);
+        viewModel = new ViewModelProvider(requireActivity()).get(SpecifShopViewModel.class);
         if (getArguments() != null) {
             name = getArguments().getString(NAME);
         }
