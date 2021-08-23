@@ -22,6 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/auto_bot"
             tools:srcCompat="@drawable/auto1" />
 
         <TextView
@@ -30,8 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="@font/antic"
-            android:text="Title"
-            android:textFontWeight="2000"
+            android:text="@string/title"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Location"
+            android:text="@string/location"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/shop_description_text_view"
             app:layout_constraintStart_toStartOf="parent" />
@@ -55,12 +55,11 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="This is the part where the description about the shop goes and it will carry al the content necessary"
+            android:text="@string/description"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.cardview.widget.CardView>

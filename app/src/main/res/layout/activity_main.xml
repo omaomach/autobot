@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffff"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.splashScreen.SplashScreen">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -21,7 +21,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472">
+        app:layout_constraintVertical_bias="0.472"
+        android:contentDescription="@string/auto_bot">
 
     </ImageView>
 
@@ -33,7 +34,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="180dp"
         android:fontFamily="@font/bangers"
-        android:text="AutoBot"
+        android:text="@string/autobot"
         android:textAlignment="center"
         android:textSize="70sp"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
@@ -48,11 +49,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/bangers"
-        android:text="Link to a Mechanic / Auto Repair Shop Nearest You"
+        android:text="@string/link_to_a_mechanic_auto_repair_shop_nearest_you"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="	#808080"/>
 

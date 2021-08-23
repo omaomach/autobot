@@ -1,4 +1,4 @@
-package com.example.autobot1.activities;
+package com.example.autobot1.activities.splashScreen;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +12,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.autobot1.R;
+import com.example.autobot1.activities.credentials.RegisterPage;
 import com.example.autobot1.activities.landing.MapActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_SCREEN = 4000;
+public class SplashScreen extends AppCompatActivity {
     //Variables
     Animation topAnim, bottomAnim;
     ImageView image;
@@ -41,16 +41,14 @@ public class MainActivity extends AppCompatActivity {
         logo.setAnimation(bottomAnim);
         slogan.setAnimation(bottomAnim);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                    startActivity(new Intent(MainActivity.this, RegisterPage.class));
-                } else {
-                    Intent intent = new Intent(MainActivity.this, MapActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
+        int SPLASH_SCREEN = 4000;
+        new Handler().postDelayed(() -> {
+            if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+                startActivity(new Intent(SplashScreen.this, RegisterPage.class));
+            } else {
+                Intent intent = new Intent(SplashScreen.this, MapActivity.class);
+                startActivity(intent);
+                finish();
             }
         }, SPLASH_SCREEN);
 

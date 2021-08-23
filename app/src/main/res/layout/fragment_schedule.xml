@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.landing.frags.ScheduleFragment">
+    tools:context=".activities.mechanics.frags.ScheduleFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/antic"
-            android:text="Yours Schedules"
+            android:text="@string/yours_schedules"
             android:textColor="#000000"
             android:textSize="30sp"/>
 
@@ -38,8 +38,8 @@
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/lv_shedules"
+            <ListView
+                android:id="@+id/lv_schedules"
                 android:layout_weight="1"
                 tools:listitem="@layout/schedule_item"
                 android:layout_marginBottom="5dp"

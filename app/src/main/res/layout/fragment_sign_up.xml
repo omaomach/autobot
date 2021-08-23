@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".activities.credentials.frags.SignUpFragment">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_pic_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/bot3"
+        android:src="@drawable/account_circle"
+        app:civ_border_width="1dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,15 +23,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
-        android:hint="Username"
+        android:hint="@string/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintTop_toBottomOf="@+id/profile_pic_iv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
             android:id="@+id/name_input_et"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/sign_up_page_button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,13 +48,36 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
-        android:hint="Enter email address"
+        android:hint="@string/enter_email_address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_inpu_et"
+            android:id="@+id/email_input_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/sign_up_page_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phone_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:hint="@string/enter_email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone_input_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/sign_up_page_button"
@@ -69,10 +94,10 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
-        android:hint="Password"
+        android:hint="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/phone_input_layout"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -92,7 +117,7 @@
         android:layout_marginStart="110dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="110dp"
-        android:text="@string/fui_progress_dialog_signing_up"
+        android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -104,21 +129,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:checkedButton="@id/mechanic_radio"
-
         android:gravity="center_horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/password_input_layout">
+        app:layout_constraintTop_toBottomOf="@+id/password_input_layout"
+        tools:layout_editor_absoluteX="0dp">
 
         <RadioButton
             android:id="@+id/mechanic_radio"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Mechanic" />
+            android:text="@string/mechanic" />
 
         <RadioButton
             android:id="@+id/client_radio"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Client" />
+            android:text="@string/client" />
     </RadioGroup>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -133,18 +158,19 @@
         android:tint="@color/transparent"
         android:tintMode="src_atop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/login_fragment" />
 
     <View
         android:id="@+id/animation_view"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_margin="16dp"
-        android:visibility="invisible"
         android:background="#B88080"
         android:text="@string/next"
         android:tint="@color/transparent"
         android:tintMode="src_atop"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

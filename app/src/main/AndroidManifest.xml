@@ -17,9 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoBot1">
         <activity
+            android:name=".activities.mechanics.MechanicsActivity"
+            android:exported="true" />
+        <activity
             android:name=".activities.credentials.CredentialsActivity"
             android:label="@string/title_activity_credentials"
-            android:theme="@style/Theme.AutoBot1.NoActionBar"></activity>
+            android:theme="@style/Theme.AutoBot1.NoActionBar" />
         <activity android:name=".activities.landing.MapActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -32,20 +35,16 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
-            android:value="false"/>
+        <meta-data
+            android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+            android:value="false" />
 
         <activity android:name=".activities.Notifications" />
-        <activity android:name=".activities.MechanicMenu" />
-        <activity android:name=".activities.Users" />
         <activity android:name=".activities.Booking" />
-        <activity android:name=".activities.Contact" />
-        <activity android:name=".activities.Schedules" />
-        <activity android:name=".activities.Menu" />
-        <activity android:name=".activities.RegisterPage" />
-        <activity android:name=".activities.Login" />
-        <activity android:name=".activities.Dashboard" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.contact.Contact" />
+        <activity android:name=".activities.mechanicSchedules.Schedules" />
+        <activity android:name=".activities.credentials.RegisterPage" />
+        <activity android:name=".activities.splashScreen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
